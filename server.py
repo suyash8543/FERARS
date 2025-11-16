@@ -1,4 +1,5 @@
 import os
+
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 from flask import Flask, render_template, Response, request, jsonify
 from fer import FER
@@ -6,6 +7,20 @@ import cv2
 import sqlite3
 import numpy as np
 import random
+# server.py (top)
+import sys, traceback
+try:
+    from fer import FER
+    print("Imported FER OK. fer.__version__:", getattr(__import__("fer"), "__version__", "unknown"))
+except Exception as e:
+    print("ERROR importing FER:", repr(e), file=sys.stderr, flush=True)
+    traceback.print_exc()
+    # exit so Gunicorn log contains the trace (optional)
+    sys.exit(1)
+
+from flask import Flask
+
+
 
 app = Flask(__name__)
 detector = FER()
