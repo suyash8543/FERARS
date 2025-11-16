@@ -155,5 +155,5 @@ This project is licensed under the MIT License.
 
 👨‍💻 Developed By
 
-Suyash Tripathi ,Tanmay Vaishth , Sujal Aggrawal , Vikash Verma
+Suyash Tripathi ,Tanmay Vashisth , Sujal Aggrawal , Vikash Verma
 FERARS – AI-based Facial Emotion Recognition & Recommendation System
