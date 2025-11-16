@@ -1,0 +1,181 @@
+<html>
+<head>
+    <title>FERARS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/modern-style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <div id="spinner" class="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/logo.png" alt="Ferars">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item" id="loginSection">
+                        <a class="btn btn-primary rounded-pill px-4" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item d-none" id="logoutSection">
+                        <button class="btn btn-danger rounded-pill px-4" id="logoutButton">Logout</button>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <section class="hero-section" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        Discover the Magic of <span class="text-primary">Emotions</span>
+                    </h1>
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">
+                        Unlock the power of emotional intelligence with technology that enables real-time facial emotion recognition and gain insights into emotions and make personalized recommendations for improved interactions.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                        <a href="http://192.168.105.197:5000" class="btn btn-primary btn-lg me-3">
+                            Let's capture
+                        </a>
+                        <a href="about.html" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-book-open me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="hero-image position-relative">
+                        <img src="img/1.png" 
+                             class="img-fluid rounded-3 shadow-lg"
+                             loading="eager"
+                             decoding="async">
+                        <div class="blob blob-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="image-container">
+                        <img src="img/2.png" 
+                             alt="Emotions" 
+                             class="img-fluid"
+                             loading="eager"
+                             decoding="async">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="display-5 mb-4">How it <span class="text-primary">Works ?</span></h2>
+                    <p class="lead mb-4">Our advanced facial emotion recognition technology employs deep learning algorithms to detect and interpret a wide range of emotions from facial expressions. By processing live video or still images, we deliver an immediate, precise analysis of emotional states—ranging from happy and surprise to sadness, anger, fear, disgust.</p>
+                    <a href="about.html" class="btn btn-modern">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>About Us</h5>
+                    <p>FERARS, short for Facial Expression Recognition and Recommendation System, is an approach to personalized recommendations. It leverages facial expression analysis to understand your mood and provide tailored suggestions.</p>
+                        <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for gardening tips and updates.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FERARS. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginSection = document.getElementById('loginSection');
+            const logoutSection = document.getElementById('logoutSection');
+            const logoutButton = document.getElementById('logoutButton');
+    
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (currentUser) {
+                loginSection.classList.add('d-none');
+                logoutSection.classList.remove('d-none'); 
+            } else {
+                loginSection.classList.remove('d-none'); 
+                logoutSection.classList.add('d-none');
+            }
+    
+            logoutButton.addEventListener('click', function () {
+                sessionStorage.removeItem('currentUser'); 
+                alert('You have been logged out successfully!');
+                loginSection.classList.remove('d-none');
+                logoutSection.classList.add('d-none');
+                window.location.href = 'login.html'; 
+            });
+            console.log("Current User: ", sessionStorage.getItem('currentUser'));
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/modern-animations.js"></script>
+
+</body>
+</html>

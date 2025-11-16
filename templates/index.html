@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Facial Expression Recognition</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Facial Expression Recognition</h2>
+        <div class="video-container">
+            <img id="video" src="{{ url_for('video_feed') }}" width="100%">
+        </div>
+
+
+        <div class="capbutt">
+            <button id="capture-button" class="rounded-button">
+                <img src="{{ url_for('static', filename='camera-icon.png') }}" alt="Camera Icon" class="button-icon"> 
+                Capture Image
+            </button>
+        </div>
+        <div id="result" style="margin-top: 20px;">
+            <h3>Emotion: <span id="emotion"></span></h3>
+            <table id="recommendations-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Recommendation</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Category</th>
+                    </tr>
+                </thead>
+                <tbody id="recommendations-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('capture-button').onclick = function() {
+            const video = document.getElementById('video');
+            const canvas = document.createElement('canvas');
+            canvas.width = video.width;
+            canvas.height = video.height;
+            const context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.toBlob(function(blob) {
+                const formData = new FormData();
+                formData.append('image', blob);
+                fetch('/process_image', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById('emotion').innerText = data.emotion;
+                    const recommendationsBody = document.getElementById('recommendations-body');
+                    recommendationsBody.innerHTML = '';
+                
+
+                    if (data.recommendations.length === 0) {
+                        recommendationsBody.innerHTML = '<tr><td colspan="2">No recommendations available.</td></tr>';
+                        return;
+                    }
+                
+
+                    data.recommendations.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td style="border: 1px solid #ccc; padding: 8px;">${item[0]}</td>
+                                         <td style="border: 1px solid #ccc; padding: 8px;">${item[1]}</td>`;
+                        recommendationsBody.appendChild(row);
+                    });
+                });
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# Virtual envs
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+.build/
+dist/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model and large binary files (store separately or use Git LFS)
+*.h5
+*.pt
+*.pth
+*.ckpt
+models/
+weights/
