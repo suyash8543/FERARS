@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - FERARS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Ferars">
+            </a>
+        </div>
+    </nav>
+    <section class="py-5">
+        <div class="container">
+            <h1>About FERARS</h1>
+            <p>FERARS (Facial Expression Recognition and Recommendation System) uses facial expression analysis to provide personalized recommendations.</p>
+        </div>
+    </section>
+</body>
+</html>

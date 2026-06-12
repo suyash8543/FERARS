@@ -36,67 +36,6 @@ categories = [
 cursor.executemany('INSERT INTO categories (name) VALUES (?)', categories)
 
 recommendations = {
-    # large dictionary omitted for brevity in this generator script
-}
-
-sample_recommendations = []
-
-for emotion, data in recommendations.items():
-    for movie in data['movies']:
-        sample_recommendations.append((emotion, f"Watch '{movie}'", 1))
-    for place in data['places']:
-        sample_recommendations.append((emotion, place, 2))
-    for song in data['songs']:
-        sample_recommendations.append((emotion, f"Listen to '{song}'", 3))
-    for food in data['foods']:
-        sample_recommendations.append((emotion, food, 4))
-    for activity in data['activities']:
-        sample_recommendations.append((emotion, activity, 5))
-
-cursor.executemany('INSERT INTO recommendations (emotion, recommendation, category_id) VALUES (?, ?, ?)', sample_recommendations)
-
-conn.commit()
-conn.close()
-
-print(f"Database initialized successfully at {db_path}")
-import sqlite3
-import os
-
-# Create database file in the current working directory
-db_path = 'recommendations.db'
-conn = sqlite3.connect(db_path)
-cursor = conn.cursor()
-
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS categories (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL
-)
-''')
-
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS recommendations (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    emotion TEXT NOT NULL,
-    recommendation TEXT NOT NULL,
-    category_id INTEGER NOT NULL,
-    FOREIGN KEY (category_id) REFERENCES categories (id)
-)
-''')
-
-cursor.execute('DELETE FROM recommendations')
-cursor.execute('DELETE FROM categories')
-
-categories = [
-    ('movie',),
-    ('place',),
-    ('song',),
-    ('food',),
-    ('activity',)
-]
-cursor.executemany('INSERT INTO categories (name) VALUES (?)', categories)
-
-recommendations = {
     'happy': {
         'movies': [
             "The Greatest Showman", "Coco", "La La Land", "Sing", "Paddington 2", 

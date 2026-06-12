@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ferars - Login/Signup</title>
@@ -9,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/modern-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-style.css') }}">
 </head>
 <body>
     <div id="spinner" class="loading">
@@ -20,8 +21,8 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="img/logo.png" alt="Ferars">
+            <a href="/" class="navbar-brand">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Ferars">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -29,13 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -124,9 +125,9 @@
                 <div class="col-lg-4 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -144,8 +145,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
- 
     <script>
         AOS.init({
             duration: 1000,
@@ -187,7 +186,7 @@
                 const savedUser = this.getCookie('currentUser');
                 if (savedUser) {
                     sessionStorage.setItem('currentUser', JSON.stringify(savedUser));
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 }
             },
             viewUsers() {
@@ -306,7 +305,7 @@
                 if (UserSystem.login(email, password)) {
                     const user = UserSystem.findUserByEmail(email);
                     alert('Login successful! Welcome back, ' + user.name);
-                    window.location.href = 'index.html';
+                    window.location.href = '/';
                 } else {
                     alert('Invalid email or password');
                 }

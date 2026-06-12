@@ -32,3 +32,10 @@ users.db
 *~
 .pytest_cache/
 htmlcov/
+recommendations.db
+*.sqlite3
+__pycache__/
+*.pyc
+users.db
+backend/*.pyc
+backend/__pycache__/

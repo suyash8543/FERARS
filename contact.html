@@ -1,3 +1,5 @@
+<!-- Contact page adapted for Flask templates -->
+<!DOCTYPE html>
 <html>
 <head>
     <title>Contact - Ferars</title>
@@ -9,13 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-style.css') }}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
-                <img src="img/logo.png" alt="Ferars">
+            <a href="/" class="navbar-brand">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Ferars">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -23,13 +26,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
+                        <a class="nav-link active" href="/contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +47,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="contact-image-container">
-                        <img src="img/6.jpg" 
+                        <img src="{{ url_for('static', filename='img/6.jpg') }}" 
                              alt="Contact Us" 
                              class="img-fluid rounded-3 shadow-lg">
                     </div>
@@ -120,9 +123,9 @@
                 <div class="col-lg-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
