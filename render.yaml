@@ -1,14 +1,9 @@
 services:
   - type: web
-    name: ferars-backend
+    name: ferars
     env: python
-    plan: standard
-    buildCommand: "pip install -r requirements.txt && python backend/setup_database.py"
-    startCommand: "gunicorn backend.server:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app
     envVars:
       - key: PYTHON_VERSION
-        value: "3.10"
-      - key: TF_CPP_MIN_LOG_LEVEL
-        value: "2"
-      - key: PYTHONUNBUFFERED
-        value: "1"
+        value: 3.10.13
