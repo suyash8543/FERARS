@@ -1,6 +1,9 @@
 import sqlite3
+import os
 
-conn = sqlite3.connect('recommendations.db')
+# Create database file in the current working directory
+db_path = 'recommendations.db'
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 cursor.execute('''
@@ -304,3 +307,5 @@ cursor.executemany('INSERT INTO recommendations (emotion, recommendation, catego
 
 conn.commit()
 conn.close()
+
+print(f"Database initialized successfully at {db_path}")
