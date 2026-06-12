@@ -2,6 +2,7 @@ import os
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from fer import FER
 import cv2
 import sqlite3
@@ -19,6 +20,7 @@ except Exception as e:
     detector = None
 
 app = Flask(__name__)
+CORS(app)
 
 def get_recommendations(emotion):
     try:
@@ -65,6 +67,11 @@ def get_recommendations(emotion):
 def index():
     return render_template('index.html')
 
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint for Render"""
+    return jsonify({'status': 'healthy'}), 200
+
 @app.route('/process_image', methods=['POST'])
 def process_image():
     if not detector:
@@ -91,4 +98,5 @@ def process_image():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
