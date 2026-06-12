@@ -23,7 +23,7 @@ venv/
 ENV/
 env/
 .DS_Store
-*.db
+users.db
 .env
 .vscode/
 .idea/

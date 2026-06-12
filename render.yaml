@@ -3,8 +3,8 @@ services:
     name: ferars-backend
     env: python
     plan: standard
-    buildCommand: "pip install -r requirements.txt && python setup_database.py"
-    startCommand: "gunicorn server:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120"
+    buildCommand: "pip install -r requirements.txt && python backend/setup_database.py"
+    startCommand: "gunicorn backend.server:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120"
     envVars:
       - key: PYTHON_VERSION
         value: "3.10"

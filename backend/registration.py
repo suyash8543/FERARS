@@ -46,6 +46,7 @@ def register():
         return jsonify({'error': 'Email already exists'}), 400
 
 
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.form
@@ -73,6 +74,6 @@ def logout():
     """Handle user logout."""
     return jsonify({'message': 'Logged out successfully!'}), 200
     
-
+    
 if __name__ == '__main__':
     app.run(debug=True)
