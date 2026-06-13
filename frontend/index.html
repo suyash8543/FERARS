@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>FERARS</title>
@@ -10,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/modern-style.css') }}">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/modern-style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -24,8 +23,8 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a href="/" class="navbar-brand">
-                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Ferars">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/logo.png" alt="Ferars">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
@@ -33,20 +32,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item" id="loginSection">
-                        <a class="btn btn-primary rounded-pill px-4" href="/login">Login</a>
+                        <a class="btn btn-primary rounded-pill px-4" href="login.html">Login</a>
                     </li>
                     <li class="nav-item d-none" id="logoutSection">
                         <button class="btn btn-danger rounded-pill px-4" id="logoutButton">Logout</button>
                     </li>
+                    
+                    
                 </ul>
             </div>
         </div>
@@ -65,17 +66,17 @@
                         Unlock the power of emotional intelligence with technology that enables real-time facial emotion recognition and gain insights into emotions and make personalized recommendations for improved interactions.
                     </p>
                     <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
-                        <a href="https://ferars-7.onrender.com/capture" class="btn btn-primary btn-lg me-3">
+                        <a href="http://192.168.105.197:5000" class="btn btn-primary btn-lg me-3">
                             Let's capture
                         </a>
-                        <a href="/about" class="btn btn-outline-primary btn-lg">
+                        <a href="about.html" class="btn btn-outline-primary btn-lg">
                             <i class="fas fa-book-open me-2"></i>Learn More
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="hero-image position-relative">
-                        <img src="{{ url_for('static', filename='img/1.png') }}" 
+                        <img src="img/1.png" 
                              class="img-fluid rounded-3 shadow-lg"
                              loading="eager"
                              decoding="async">
@@ -91,7 +92,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="image-container">
-                        <img src="{{ url_for('static', filename='img/2.png') }}" 
+                        <img src="img/2.png" 
                              alt="Emotions" 
                              class="img-fluid"
                              loading="eager"
@@ -101,7 +102,7 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <h2 class="display-5 mb-4">How it <span class="text-primary">Works ?</span></h2>
                     <p class="lead mb-4">Our advanced facial emotion recognition technology employs deep learning algorithms to detect and interpret a wide range of emotions from facial expressions. By processing live video or still images, we deliver an immediate, precise analysis of emotional states—ranging from happy and surprise to sadness, anger, fear, disgust.</p>
-                    <a href="/about" class="btn btn-modern">Learn More</a>
+                    <a href="about.html" class="btn btn-modern">Learn More</a>
                 </div>
             </div>
         </div>
@@ -123,9 +124,9 @@
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -167,14 +168,14 @@
                 alert('You have been logged out successfully!');
                 loginSection.classList.remove('d-none');
                 logoutSection.classList.add('d-none');
-                window.location.href = '/login'; 
+                window.location.href = 'login.html'; 
             });
             console.log("Current User: ", sessionStorage.getItem('currentUser'));
         });
     </script>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/modern-animations.js') }}"></script>
+    <script src="js/main.js"></script>
+    <script src="js/modern-animations.js"></script>
 
 </body>
 </html>
