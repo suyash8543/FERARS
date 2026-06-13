@@ -25,3 +25,27 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; font-weight:700; }
 .hero-image:hover { transform: rotateY(0deg) rotateX(0deg); }
 .modern-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); border-radius:20px; padding:2rem; transition:var(--transition); border:1px solid rgba(255,255,255,0.2); }
 @keyframes float { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-20px);} }
+
+.btn-primary {
+    background-color: #2ECC71 !important;
+    border-color: #2ECC71 !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #27AE60 !important;
+    border-color: #27AE60 !important;
+}
+
+.btn-outline-primary {
+    color: #2ECC71 !important;
+    border-color: #2ECC71 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2ECC71 !important;
+    border-color: #2ECC71 !important;
+    color: white !important;
+}
