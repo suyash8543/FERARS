@@ -24,4 +24,4 @@ RUN python setup_database.py || true
 
 EXPOSE 5000
 
-CMD ["gunicorn", "server:app", "--bind", "0.0.0.0:5000", "--workers", "1", "--timeout", "120"]
+CMD sh -c "gunicorn server:app --bind 0.0.0.0:${PORT:-5000} --workers 1 --timeout 120"
